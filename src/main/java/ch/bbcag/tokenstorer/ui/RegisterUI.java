@@ -11,7 +11,7 @@ import ch.bbcag.tokenstorer.security.PasswordManager;
 public class RegisterUI {
     public static void registerUser(Connection conn) throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\n=== Register ===");
+        System.out.println(Colors.CYAN + "\n=== Register ===" + Colors.RESET);
         System.out.print("Username: ");
         String username = scanner.nextLine();
         System.out.print("Password: ");
@@ -24,7 +24,9 @@ public class RegisterUI {
             pstmt.setString(1, username);
             pstmt.setString(2, hashedPassword);
             pstmt.executeUpdate();
-            System.out.println("User registered successfully!");
+            System.out.println(Colors.GREEN + "User registered successfully!" + Colors.RESET);
+        } catch (SQLException e) {
+            System.out.println(Colors.RED + "Error registering user: " + e.getMessage() + Colors.RESET);
         }
     }
 }

@@ -13,7 +13,7 @@ import ch.bbcag.tokenstorer.security.PasswordManager;
 public class LoginUI {
     public static void loginUser(Connection conn) throws SQLException {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("\n=== Login ===");
+        System.out.println("\n|===== Login =====|");
         System.out.print("Username: ");
         String username = scanner.nextLine();
         System.out.print("Password: ");

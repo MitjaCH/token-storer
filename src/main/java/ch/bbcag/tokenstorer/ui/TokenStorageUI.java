@@ -10,13 +10,12 @@ public class TokenStorageUI {
     public static void storeToken(Connection conn, int userId) throws SQLException {
         Scanner scanner = new Scanner(System.in);
         System.out.println("\n=== Store Token ===");
-        System.out.print("Token Provider: ");
+        System.out.print("Token Name: ");
         String provider = scanner.nextLine();
         System.out.print("Access Token: ");
         String accessToken = scanner.nextLine();
 
-        // Encrypt the token before storing (you can use any encryption algorithm here)
-        String encryptedToken = accessToken; // You need to implement encryption
+        String encryptedToken = accessToken;
 
         String insertTokenSQL = "INSERT INTO token (user_id, token_provider, token_hashed) VALUES (?, ?, ?)";
         try (PreparedStatement pstmt = conn.prepareStatement(insertTokenSQL)) {

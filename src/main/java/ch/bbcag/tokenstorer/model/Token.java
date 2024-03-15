@@ -1,12 +1,26 @@
 package ch.bbcag.tokenstorer.model;
 
-import java.sql.Timestamp;
-
 public class Token {
-    private int tokenId;
-    private int userId;
-    private String tokenProvider;
-    private String tokenHashed;
-    private Timestamp createdAt;
+    private String provider;
+    private String token;
+    private String createdAt;
+
+    public Token(String provider, String token, String createdAt) {
+        this.provider = provider;
+        this.token = token;
+        this.createdAt = createdAt;
+    }
+
+    public String getProvider() {
+        return provider;
+    }
+
+    public String getToken() {
+        return token;
+    }
+
+    public String getCreatedAt() {
+        return createdAt;
+    }
 
 }
